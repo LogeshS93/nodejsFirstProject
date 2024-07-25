@@ -91,7 +91,25 @@ const postCustomerById = (req, res)=>{
                 console.log(data);
                 console.log(data.data.custName)
             })
-             .catch((error) => console.log(error))*/
+             .catch((error) => console.log(error))
+
+                async function makeRequest() {
+                  try {
+                    const response = await fetch(url, {
+                      method: 'POST',
+                      body: JSON.stringify(payload),
+                      headers: {
+                        'Content-Type': 'application/json'
+                      }
+                    });
+                    const data = await response.json();
+                    console.log(data);
+                  } catch (error) {
+                    console.error(error);
+                  }
+                }
+             
+             */
 
 
             if(!existCustomerCheck){
